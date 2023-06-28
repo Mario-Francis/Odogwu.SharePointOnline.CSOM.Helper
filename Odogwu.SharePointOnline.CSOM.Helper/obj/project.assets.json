@@ -1220,7 +1220,7 @@
     "/Users/mario-francis/.nuget/packages/": {}
   },
   "project": {
-    "version": "2.0.8",
+    "version": "2.0.9",
     "restore": {
       "projectUniqueName": "/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/Odogwu.SharePointOnline.CSOM.Helper.csproj",
       "projectName": "Odogwu.SharePointOnline.CSOM.Helper",

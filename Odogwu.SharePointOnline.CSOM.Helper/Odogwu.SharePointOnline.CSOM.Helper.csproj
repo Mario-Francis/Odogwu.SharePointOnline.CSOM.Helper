@@ -11,9 +11,20 @@
 
   <PropertyGroup>
     <PackageId>Odogwu.SharePointOnline.CSOM.Helper</PackageId>
-    <Version>2.0.8</Version>
+    <Version>2.0.9</Version>
     <Authors>Emmanuel A. &amp; Mario-Francis E.</Authors>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>A .Net Standard helper library for the Microsoft.SharePointOnline.CSOM library.</Description>
+    <RepositoryUrl>https://github.com/Mario-Francis/Odogwu.SharePointOnline.CSOM.Helper</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>SharePointOnline CSOM Helper Odogwu</PackageTags>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
+<ItemGroup>
+    <None Include=".\LICENSE.txt" Pack="true" PackagePath=""/>
+    <None Include=".\README.md" Pack="true" PackagePath=""/>
+</ItemGroup>
 
 </Project>
