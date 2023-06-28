@@ -1,0 +1,72 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/Odogwu.SharePointOnline.CSOM.Helper.csproj": {}
+  },
+  "projects": {
+    "/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/Odogwu.SharePointOnline.CSOM.Helper.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/Odogwu.SharePointOnline.CSOM.Helper.csproj",
+        "projectName": "Odogwu.SharePointOnline.CSOM.Helper",
+        "projectPath": "/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/Odogwu.SharePointOnline.CSOM.Helper.csproj",
+        "packagesPath": "/Users/mario-francis/.nuget/packages/",
+        "outputPath": "/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mario-francis/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.SharePointOnline.CSOM": {
+              "target": "Package",
+              "version": "[16.1.23710.12000, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.31.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

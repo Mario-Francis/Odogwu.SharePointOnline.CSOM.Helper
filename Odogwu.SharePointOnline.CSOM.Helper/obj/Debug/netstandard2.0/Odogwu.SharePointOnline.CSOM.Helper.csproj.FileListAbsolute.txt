@@ -1,0 +1,5 @@
+/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/obj/Debug/netstandard2.0/Odogwu.SharePointOnline.CSOM.Helper.csproj.AssemblyReference.cache
+/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/obj/Debug/netstandard2.0/Odogwu.SharePointOnline.CSOM.Helper.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/obj/Debug/netstandard2.0/Odogwu.SharePointOnline.CSOM.Helper.AssemblyInfoInputs.cache
+/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/obj/Debug/netstandard2.0/Odogwu.SharePointOnline.CSOM.Helper.AssemblyInfo.cs
+/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/obj/Debug/netstandard2.0/Odogwu.SharePointOnline.CSOM.Helper.csproj.CoreCompileInputs.cache
