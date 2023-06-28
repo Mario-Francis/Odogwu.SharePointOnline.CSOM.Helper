@@ -20,13 +20,13 @@ namespace Odogwu.SharePointOnline.CSOM.Helper.Models
         public string FileExtension { get; set; }
         public string GetFileNameWithExtension()
         {
-            var ext = FileExtension.StartsWith('.') ? FileExtension : "." + FileExtension;
+            var ext = FileExtension.StartsWith(".") ? FileExtension : "." + FileExtension;
             return FileName.Replace(" ", "_") + ext;
         }
 
         public string GetUniqueFileNameWithExtension()
         {
-            var ext = FileExtension.StartsWith('.') ? FileExtension : "." + FileExtension;
+            var ext = FileExtension.StartsWith(".") ? FileExtension : "." + FileExtension;
             return FileName.Replace(" ", "_").Replace(".", "_") + "-" + Utilities.GenerateUniqueId() + ext;
         }
     }

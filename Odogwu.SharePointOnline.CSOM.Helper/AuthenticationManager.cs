@@ -77,10 +77,10 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
                         {
                             if (!timedOut)
                             {
-                                TokenWaitInfo wi = (TokenWaitInfo)state;
-                                if (wi.Handle != null)
+                                TokenWaitInfo _wi = (TokenWaitInfo)state;
+                                if (_wi.Handle != null)
                                 {
-                                    wi.Handle.Unregister(null);
+                                    _wi.Handle.Unregister(null);
                                 }
                             }
                             else

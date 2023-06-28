@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.SharePoint.Client;
 using Odogwu.SharePointOnline.CSOM.Helper.Models;
+using Odogwu.SharePointOnline.CSOM.Helper.Models.Enums;
 using SP = Microsoft.SharePoint.Client;
 
 namespace Odogwu.SharePointOnline.CSOM.Helper
@@ -212,7 +213,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
                 ConditionalScope scope = new ConditionalScope(context,() => item.FileSystemObjectType == FileSystemObjectType.File);
                 ClientResult<Stream> clientResult = null;
                 using (scope.StartScope()) {
-                    context.Load(item, item => item, item => item.File);
+                    context.Load(item, _item => _item, _item => _item.File);
                 };
 
                 await context.ExecuteQueryAsync();
@@ -440,7 +441,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
                 do
                 {
                     ListItemCollection listItems = list.GetItems(query);
-                    context.Load(listItems, t => t.Include(t => null), t => t.ListItemCollectionPosition);
+                    context.Load(listItems, t => t.Include(_t => null), t => t.ListItemCollectionPosition);
                     await context.ExecuteQueryAsync();
 
                     resultList.AddRange(listItems);
@@ -544,7 +545,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
                 do
                 {
                     ListItemCollection listItems = list.GetItems(query);
-                    context.Load(listItems, t => t.Include(t => null), t => t.ListItemCollectionPosition);
+                    context.Load(listItems, t => t.Include(_t => null), t => t.ListItemCollectionPosition);
                     await context.ExecuteQueryAsync();
 
                     resultList.AddRange(listItems);
@@ -625,7 +626,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
                 ClientResult<Stream> clientResult = null;
                 using (scope.StartScope())
                 {
-                    context.Load(item, item => item, item => item.File);
+                    context.Load(item, _item => _item, _item => _item.File);
                 };
 
                 await context.ExecuteQueryAsync();
@@ -709,7 +710,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
                 ConditionalScope scope = new ConditionalScope(context, () => item.FileSystemObjectType == FileSystemObjectType.File);
                 using (scope.StartScope())
                 {
-                    context.Load(item, item => item, item => item.File);
+                    context.Load(item, _item => _item, _item => _item.File);
                 };
 
                 await context.ExecuteQueryAsync();
@@ -794,7 +795,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
                 }
                 var sourceFileName = Path.GetFileName(request.SourceFileUrl);
                 var sourceExtension = Path.GetExtension(request.SourceFileUrl);
-                var destinationFileName = $"{(string.IsNullOrEmpty(request.NewFileName?.Trim()) ? sourceFileName : (request.NewFileName?.Split(".")[0].Replace(" ", "_")+sourceExtension))}";
+                var destinationFileName = $"{(string.IsNullOrEmpty(request.NewFileName?.Trim()) ? sourceFileName : (request.NewFileName?.Split('.')[0].Replace(" ", "_")+sourceExtension))}";
                 var destinationFolder = $"{CleanFolderPath(request.DestinationFolder)}";
                 var destinationFileUrl = $"{context.GetSiteServerRelativeUrl()}/{request.Library}/{destinationFolder}/{destinationFileName}".Replace("//", "/");
 
@@ -1140,7 +1141,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
         private string CleanFolderPath(string folderName)
         {
             var arr = folderName?.Split('/').Where(f => !string.IsNullOrEmpty(f)).Select(f => f.Trim('.').Replace("\\", ""));
-            return string.Join('/', arr)?.Trim('/');
+            return string.Join("/", arr)?.Trim('/');
         }
 
         private Folder CreateFolder(Folder rootFolder, string folderPath)

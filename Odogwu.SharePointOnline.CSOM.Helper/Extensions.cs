@@ -10,7 +10,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
         public static string GetSiteServerRelativeUrl(this ClientRuntimeContext context)
         {
             var spDomain = "sharepoint.com";
-            var url = context.Url.Substring(context.Url.IndexOf(spDomain)+spDomain.Length);
+            var url = context.Url.Substring(context.Url.IndexOf(spDomain) + spDomain.Length);
             return url;
         }
 
@@ -27,7 +27,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
             {
                 var key = p.Key.Replace("'", "").Replace("\"", "");
                 object val = p.Value;
-                if (p.Value!=null && p.Value.GetType() == typeof(string))
+                if (p.Value != null && p.Value.GetType() == typeof(string))
                 {
                     val = p.Value.ToString().Replace("'", "").Replace("\"", "");
                 }
@@ -36,11 +36,24 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
             return paramList;
         }
 
-        public static string ResolveTargetFolder(this ClientRuntimeContext context, string library, string targetFolderUrl) => targetFolderUrl?.Trim() switch
+        // public static string ResolveTargetFolder(this ClientRuntimeContext context, string library, string targetFolderUrl) => targetFolderUrl?.Trim() switch
+        // {
+        //     null => null,
+        //     string s when s.Length > 0 && s.StartsWith("/") && s.Trim('/').Length > 0 => $"{context.GetSiteServerRelativeUrl()}/{targetFolderUrl?.Trim('/')}",
+        //     _ => $"{context.GetSiteServerRelativeUrl()}/{library}/{targetFolderUrl?.Trim('/')}"
+        // };
+
+        public static string ResolveTargetFolder(this ClientRuntimeContext context, string library, string targetFolderUrl)
         {
-            null => null,
-            string s when s.Length > 0 && s.StartsWith("/") && s.Trim('/').Length > 0 => $"{context.GetSiteServerRelativeUrl()}/{targetFolderUrl?.Trim('/')}",
-            _ => $"{context.GetSiteServerRelativeUrl()}/{library}/{targetFolderUrl?.Trim('/')}"
-        };
+            switch (targetFolderUrl?.Trim())
+            {
+                case null:
+                    return null;
+                case string s when s.Length > 0 && s.StartsWith("/") && s.Trim('/').Length > 0:
+                    return $"{context.GetSiteServerRelativeUrl()}/{targetFolderUrl?.Trim('/')}";
+                default:
+                    return $"{context.GetSiteServerRelativeUrl()}/{library}/{targetFolderUrl?.Trim('/')}";
+            }
+        }
     }
 }

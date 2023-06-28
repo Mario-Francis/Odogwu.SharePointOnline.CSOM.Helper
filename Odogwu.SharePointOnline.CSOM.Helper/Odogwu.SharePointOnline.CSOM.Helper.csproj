@@ -9,4 +9,11 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.31.0" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <PackageId>Odogwu.SharePointOnline.CSOM.Helper</PackageId>
+    <Version>2.0.8</Version>
+    <Authors>Emmanuel A. &amp; Mario-Francis E.</Authors>
+  </PropertyGroup>
+
+
 </Project>

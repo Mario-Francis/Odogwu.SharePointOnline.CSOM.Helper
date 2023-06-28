@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Odogwu.SharePointOnline.CSOM.Helper.Models.Enums;
 
 namespace Odogwu.SharePointOnline.CSOM.Helper.Models
 {

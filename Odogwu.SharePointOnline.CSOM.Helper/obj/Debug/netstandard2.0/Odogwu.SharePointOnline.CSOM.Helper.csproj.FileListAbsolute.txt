@@ -3,3 +3,8 @@
 /Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/obj/Debug/netstandard2.0/Odogwu.SharePointOnline.CSOM.Helper.AssemblyInfoInputs.cache
 /Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/obj/Debug/netstandard2.0/Odogwu.SharePointOnline.CSOM.Helper.AssemblyInfo.cs
 /Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/obj/Debug/netstandard2.0/Odogwu.SharePointOnline.CSOM.Helper.csproj.CoreCompileInputs.cache
+/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/bin/Debug/netstandard2.0/Odogwu.SharePointOnline.CSOM.Helper.deps.json
+/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/bin/Debug/netstandard2.0/Odogwu.SharePointOnline.CSOM.Helper.dll
+/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/bin/Debug/netstandard2.0/Odogwu.SharePointOnline.CSOM.Helper.pdb
+/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/obj/Debug/netstandard2.0/Odogwu.SharePointOnline.CSOM.Helper.dll
+/Users/mario-francis/Projects/Odogwu/Odogwu.SharePointOnline.CSOM.Helper/obj/Debug/netstandard2.0/Odogwu.SharePointOnline.CSOM.Helper.pdb

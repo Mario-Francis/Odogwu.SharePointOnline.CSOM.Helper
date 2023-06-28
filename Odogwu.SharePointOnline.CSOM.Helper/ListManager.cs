@@ -1,5 +1,6 @@
 ﻿using Microsoft.SharePoint.Client;
 using Odogwu.SharePointOnline.CSOM.Helper.Models;
+using Odogwu.SharePointOnline.CSOM.Helper.Models.Enums;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -183,7 +184,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
                 do
                 {
                     SP.ListItemCollection listItems = list.GetItems(query);
-                    context.Load(listItems, t => t.Include(t => null), t => t.ListItemCollectionPosition);
+                    context.Load(listItems, t => t.Include(_t => null), t => t.ListItemCollectionPosition);
                     await context.ExecuteQueryAsync();
 
                     resultList.AddRange(listItems);
@@ -196,7 +197,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
                 foreach (var item in displayList)
                 {
                     var _listItem = new SPListItem();
-                    context.Load(item, item=>item);
+                    context.Load(item, _item=>_item);
                     await context.ExecuteQueryAsync();
 
                     List<KeyValuePair<string, object>> fieldValues = new List<KeyValuePair<string, object>>();
@@ -265,7 +266,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
                 do
                 {
                     SP.ListItemCollection listItems = list.GetItems(query);
-                    context.Load(listItems, t => t.Include(t => null), t => t.ListItemCollectionPosition);
+                    context.Load(listItems, t => t.Include(_t => null), t => t.ListItemCollectionPosition);
                     await context.ExecuteQueryAsync();
 
                     resultList.AddRange(listItems);
@@ -278,7 +279,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
                 foreach (var item in displayList)
                 {
                     var _listItem = new SPListItem();
-                    context.Load(item, item => item);
+                    context.Load(item, _item => _item);
                     await context.ExecuteQueryAsync();
 
                     List<KeyValuePair<string, object>> fieldValues = new List<KeyValuePair<string, object>>();
@@ -328,7 +329,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
                 var item = list.GetItemById(id);
 
                 var _listItem = new SPListItem();
-                context.Load(item, item => item);
+                context.Load(item, _item => _item);
                 await context.ExecuteQueryAsync();
 
                 List<KeyValuePair<string, object>> fieldValues = new List<KeyValuePair<string, object>>();
@@ -384,7 +385,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
                 do
                 {
                     SP.ListItemCollection listItems = list.GetItems(query);
-                    context.Load(listItems, t => t.Include(t => null), t => t.ListItemCollectionPosition);
+                    context.Load(listItems, t => t.Include(_t => null), t => t.ListItemCollectionPosition);
                     await context.ExecuteQueryAsync();
 
                     resultList.AddRange(listItems);
@@ -396,7 +397,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
 
                 foreach(var l in displayList)
                 {
-                    context.Load(l, l => l);
+                    context.Load(l, _l => _l);
                 }
                 await context.ExecuteQueryAsync();
 
@@ -448,7 +449,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
                 var list = web.Lists.GetByTitle(listName);
 
                 var item = list.GetItemById(id);
-                context.Load(item, item=>item, item=>item.AttachmentFiles);
+                context.Load(item, _item=>_item, _item=>_item.AttachmentFiles);
 
                 var responseList = new List<ListItemAttachment>();
                 foreach (var uploadItem in uploadItems)
@@ -544,7 +545,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
                 var item = list.GetItemById(id);
 
                 var _listItem = new SPListItem();
-                context.Load(item, item => item, item=> item.AttachmentFiles);
+                context.Load(item, _item => _item, _item=> _item.AttachmentFiles);
                 await context.ExecuteQueryAsync();
 
                 List<KeyValuePair<string, object>> fieldValues = new List<KeyValuePair<string, object>>();
@@ -601,7 +602,7 @@ namespace Odogwu.SharePointOnline.CSOM.Helper
 
                 var item = list.GetItemById(id);
 
-                context.Load(item, item => item, item => item.AttachmentFiles);
+                context.Load(item, _item => _item, _item => _item.AttachmentFiles);
                 await context.ExecuteQueryAsync();
 
                 var attachments = new List<ListItemAttachment>();
