@@ -35,7 +35,6 @@ To installt this library, execute the below command
 
 ##### Create Authentication Manager
 
-    ```cs
     var  siteUrl  =  "your_site_url";
     var  grantType="client_credentials";
     var  resource="00000003-0000-0ff1-ce00-000000000000";
@@ -44,11 +43,9 @@ To installt this library, execute the below command
     var  tenant="your_tenant_id";
 
     var authManager = AuthenticationManager(siteUrl, grantType, resource, clientId, clientSecret, tenant);
-    ```
 
 ##### Upload a new file
 
-    ```cs
     var  libraryManager  =  new  LibraryManager(authManager);
     var  uploadRequest  =  new  FileUploadRequest()
     {
@@ -67,15 +64,12 @@ To installt this library, execute the below command
     string  absoluteUrl  =  result.AbsoluteUrl;
     string  fileName  =  result.FileName;
     string  serverRelativeUrl  =  result.ServerRelativeUrl;
-    ```
 
 #### Get file by ID
 
-    ```cs
     var  libraryManager  =  new  LibraryManager(authManager);
     int fileId = <your_file_id>;
     SPFile  file  =  await  libraryManager.GetFileById(fileId, "your_library_name");
-    ```
 
 ### Contributing
 
