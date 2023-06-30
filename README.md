@@ -35,43 +35,47 @@ To installt this library, execute the below command
 
 ##### Create Authentication Manager
 
-    var  siteUrl  =  "your_site_url";
-    var  grantType="client_credentials";
-    var  resource="00000003-0000-0ff1-ce00-000000000000";
-    var  clientId="your_client_id";
-    var  clientSecret="your_client_secret";
-    var  tenant="your_tenant_id";
+```cs
+var  siteUrl  =  "your_site_url";
+var  grantType="client_credentials";
+var  resource="00000003-0000-0ff1-ce00-000000000000";
+var  clientId="your_client_id";
+var  clientSecret="your_client_secret";
+var  tenant="your_tenant_id";
 
-    var authManager = AuthenticationManager(siteUrl, grantType, resource, clientId, clientSecret, tenant);
+var authManager = AuthenticationManager(siteUrl, grantType, resource, clientId, clientSecret, tenant);
+```
 
 ##### Upload a new file
 
 ```cs
-    var  libraryManager  =  new  LibraryManager(authManager);
-    var  uploadRequest  =  new  FileUploadRequest()
-    {
+var  libraryManager  =  new  LibraryManager(authManager);
+var  uploadRequest  =  new  FileUploadRequest()
+{
     Library  =  "your_library_name",
     UploadItem  =  new  FileUploadItem
     {
-    File  =  new  byte[0], // file binary
-    FileExtension  =  "file_extension(txt, pdf, jpg)",
-    FileName  =  "file_name",
-    Properties  =  new  List<KeyValuePair<string, object>>(){}
+        File  =  new  byte[0], // file binary
+        FileExtension  =  "file_extension(txt, pdf, jpg)",
+        FileName  =  "file_name",
+        Properties  =  new  List<KeyValuePair<string, object>>(){}
     }
-    };
-    FileUploadResponse  result  =  await  libraryManager.UploadFile(uploadRequest);
-    int  fileId  =  result.Id;
-    string  fileObjectId  =  result.Guid;
-    string  absoluteUrl  =  result.AbsoluteUrl;
-    string  fileName  =  result.FileName;
-    string  serverRelativeUrl  =  result.ServerRelativeUrl;
+};
+FileUploadResponse  result  =  await  libraryManager.UploadFile(uploadRequest);
+int  fileId  =  result.Id;
+string  fileObjectId  =  result.Guid;
+string  absoluteUrl  =  result.AbsoluteUrl;
+string  fileName  =  result.FileName;
+string  serverRelativeUrl  =  result.ServerRelativeUrl;
 ```
 
 #### Get file by ID
 
-    var  libraryManager  =  new  LibraryManager(authManager);
-    int fileId = <your_file_id>;
-    SPFile  file  =  await  libraryManager.GetFileById(fileId, "your_library_name");
+```cs
+var  libraryManager  =  new  LibraryManager(authManager);
+int fileId = <your_file_id>;
+SPFile  file  =  await  libraryManager.GetFileById(fileId, "your_library_name");
+```
 
 ### Contributing
 
