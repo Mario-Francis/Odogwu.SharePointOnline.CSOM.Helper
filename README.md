@@ -46,6 +46,7 @@ To installt this library, execute the below command
 
 ##### Upload a new file
 
+```cs
     var  libraryManager  =  new  LibraryManager(authManager);
     var  uploadRequest  =  new  FileUploadRequest()
     {
@@ -64,6 +65,7 @@ To installt this library, execute the below command
     string  absoluteUrl  =  result.AbsoluteUrl;
     string  fileName  =  result.FileName;
     string  serverRelativeUrl  =  result.ServerRelativeUrl;
+```
 
 #### Get file by ID
 
